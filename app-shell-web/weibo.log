@@ -1,0 +1,252 @@
+0    INFO  [2014-05-14 19:00:38]  Root WebApplicationContext: initialization started
+22   INFO  [2014-05-14 19:00:38]  Refreshing Root WebApplicationContext: startup date [Wed May 14 19:00:38 CST 2014]; root of context hierarchy
+56   INFO  [2014-05-14 19:00:38]  Loading XML bean definitions from class path resource [applicationContext-sca.xml]
+59   ERROR [2014-05-14 19:00:38]  Context initialization failed
+org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [applicationContext-sca.xml]; nested exception is java.io.FileNotFoundException: class path resource [applicationContext-sca.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:341)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:143)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:178)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:149)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:124)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:93)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:130)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:467)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:397)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:276)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:197)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:47)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:540)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:135)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.jetty.plugin.Jetty6PluginWebAppContext.doStart(Jetty6PluginWebAppContext.java:110)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.plugin.AbstractJettyRunMojo$1.filesChanged(AbstractJettyRunMojo.java:409)
+	at org.mortbay.util.Scanner.reportBulkChanges(Scanner.java:493)
+	at org.mortbay.util.Scanner.reportDifferences(Scanner.java:359)
+	at org.mortbay.util.Scanner.scan(Scanner.java:286)
+	at org.mortbay.util.Scanner$1.run(Scanner.java:246)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: java.io.FileNotFoundException: class path resource [applicationContext-sca.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:158)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:328)
+	... 26 more
+0    INFO  [2014-05-14 19:00:42]  Root WebApplicationContext: initialization started
+17   INFO  [2014-05-14 19:00:42]  Refreshing Root WebApplicationContext: startup date [Wed May 14 19:00:42 CST 2014]; root of context hierarchy
+61   INFO  [2014-05-14 19:00:42]  Loading XML bean definitions from class path resource [applicationContext-sca.xml]
+63   ERROR [2014-05-14 19:00:42]  Context initialization failed
+org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [applicationContext-sca.xml]; nested exception is java.io.FileNotFoundException: class path resource [applicationContext-sca.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:341)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:143)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:178)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:149)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:124)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:93)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:130)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:467)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:397)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:276)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:197)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:47)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:540)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:135)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.jetty.plugin.Jetty6PluginWebAppContext.doStart(Jetty6PluginWebAppContext.java:110)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.plugin.AbstractJettyRunMojo$1.filesChanged(AbstractJettyRunMojo.java:409)
+	at org.mortbay.util.Scanner.reportBulkChanges(Scanner.java:493)
+	at org.mortbay.util.Scanner.reportDifferences(Scanner.java:359)
+	at org.mortbay.util.Scanner.scan(Scanner.java:286)
+	at org.mortbay.util.Scanner$1.run(Scanner.java:246)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: java.io.FileNotFoundException: class path resource [applicationContext-sca.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:158)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:328)
+	... 26 more
+0    INFO  [2014-05-14 19:07:50]  Root WebApplicationContext: initialization started
+16   INFO  [2014-05-14 19:07:50]  Refreshing Root WebApplicationContext: startup date [Wed May 14 19:07:50 CST 2014]; root of context hierarchy
+42   INFO  [2014-05-14 19:07:50]  Loading XML bean definitions from class path resource [applicationContext-web.xml]
+43   ERROR [2014-05-14 19:07:50]  Context initialization failed
+org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [applicationContext-web.xml]; nested exception is java.io.FileNotFoundException: class path resource [applicationContext-web.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:341)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:143)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:178)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:149)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:124)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:93)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:130)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:467)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:397)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:276)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:197)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:47)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:540)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:135)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.jetty.plugin.Jetty6PluginWebAppContext.doStart(Jetty6PluginWebAppContext.java:110)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.plugin.AbstractJettyRunMojo$1.filesChanged(AbstractJettyRunMojo.java:409)
+	at org.mortbay.util.Scanner.reportBulkChanges(Scanner.java:493)
+	at org.mortbay.util.Scanner.reportDifferences(Scanner.java:359)
+	at org.mortbay.util.Scanner.scan(Scanner.java:286)
+	at org.mortbay.util.Scanner$1.run(Scanner.java:246)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: java.io.FileNotFoundException: class path resource [applicationContext-web.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:158)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:328)
+	... 26 more
+0    INFO  [2014-05-14 19:07:53]  Root WebApplicationContext: initialization started
+16   INFO  [2014-05-14 19:07:53]  Refreshing Root WebApplicationContext: startup date [Wed May 14 19:07:53 CST 2014]; root of context hierarchy
+40   INFO  [2014-05-14 19:07:53]  Loading XML bean definitions from class path resource [applicationContext-web.xml]
+41   ERROR [2014-05-14 19:07:53]  Context initialization failed
+org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [applicationContext-web.xml]; nested exception is java.io.FileNotFoundException: class path resource [applicationContext-web.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:341)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:143)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:178)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:149)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:124)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:93)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:130)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:467)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:397)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:276)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:197)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:47)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:540)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:135)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.jetty.plugin.Jetty6PluginWebAppContext.doStart(Jetty6PluginWebAppContext.java:110)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.plugin.AbstractJettyRunMojo$1.filesChanged(AbstractJettyRunMojo.java:409)
+	at org.mortbay.util.Scanner.reportBulkChanges(Scanner.java:493)
+	at org.mortbay.util.Scanner.reportDifferences(Scanner.java:359)
+	at org.mortbay.util.Scanner.scan(Scanner.java:286)
+	at org.mortbay.util.Scanner$1.run(Scanner.java:246)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: java.io.FileNotFoundException: class path resource [applicationContext-web.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:158)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:328)
+	... 26 more
+0    INFO  [2014-05-14 19:13:59]  Root WebApplicationContext: initialization started
+29   INFO  [2014-05-14 19:13:59]  Refreshing Root WebApplicationContext: startup date [Wed May 14 19:13:59 CST 2014]; root of context hierarchy
+53   INFO  [2014-05-14 19:13:59]  Loading XML bean definitions from class path resource [applicationContext-web.xml]
+54   ERROR [2014-05-14 19:13:59]  Context initialization failed
+org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [applicationContext-web.xml]; nested exception is java.io.FileNotFoundException: class path resource [applicationContext-web.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:341)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:143)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:178)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:149)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:124)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:93)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:130)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:467)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:397)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:276)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:197)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:47)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:540)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:135)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.jetty.plugin.Jetty6PluginWebAppContext.doStart(Jetty6PluginWebAppContext.java:110)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.plugin.AbstractJettyRunMojo$1.filesChanged(AbstractJettyRunMojo.java:409)
+	at org.mortbay.util.Scanner.reportBulkChanges(Scanner.java:493)
+	at org.mortbay.util.Scanner.reportDifferences(Scanner.java:359)
+	at org.mortbay.util.Scanner.scan(Scanner.java:286)
+	at org.mortbay.util.Scanner$1.run(Scanner.java:246)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: java.io.FileNotFoundException: class path resource [applicationContext-web.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:158)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:328)
+	... 26 more
+0    INFO  [2014-05-14 19:14:01]  Root WebApplicationContext: initialization started
+18   INFO  [2014-05-14 19:14:01]  Refreshing Root WebApplicationContext: startup date [Wed May 14 19:14:01 CST 2014]; root of context hierarchy
+241  INFO  [2014-05-14 19:14:01]  Loading XML bean definitions from class path resource [applicationContext-web.xml]
+242  ERROR [2014-05-14 19:14:01]  Context initialization failed
+org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [applicationContext-web.xml]; nested exception is java.io.FileNotFoundException: class path resource [applicationContext-web.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:341)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:143)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:178)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:149)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:124)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:93)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:130)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:467)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:397)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:276)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:197)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:47)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:540)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:135)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.jetty.plugin.Jetty6PluginWebAppContext.doStart(Jetty6PluginWebAppContext.java:110)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.plugin.AbstractJettyRunMojo$1.filesChanged(AbstractJettyRunMojo.java:409)
+	at org.mortbay.util.Scanner.reportBulkChanges(Scanner.java:493)
+	at org.mortbay.util.Scanner.reportDifferences(Scanner.java:359)
+	at org.mortbay.util.Scanner.scan(Scanner.java:286)
+	at org.mortbay.util.Scanner$1.run(Scanner.java:246)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: java.io.FileNotFoundException: class path resource [applicationContext-web.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:158)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:328)
+	... 26 more
+0    INFO  [2014-05-14 19:14:03]  Root WebApplicationContext: initialization started
+23   INFO  [2014-05-14 19:14:03]  Refreshing Root WebApplicationContext: startup date [Wed May 14 19:14:03 CST 2014]; root of context hierarchy
+55   INFO  [2014-05-14 19:14:03]  Loading XML bean definitions from class path resource [applicationContext-web.xml]
+57   ERROR [2014-05-14 19:14:03]  Context initialization failed
+org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [applicationContext-web.xml]; nested exception is java.io.FileNotFoundException: class path resource [applicationContext-web.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:341)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:143)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:178)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:149)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:124)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:93)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:130)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:467)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:397)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:276)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:197)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:47)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:540)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:135)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1220)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:510)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:448)
+	at org.mortbay.jetty.plugin.Jetty6PluginWebAppContext.doStart(Jetty6PluginWebAppContext.java:110)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:39)
+	at org.mortbay.jetty.plugin.AbstractJettyRunMojo$1.filesChanged(AbstractJettyRunMojo.java:409)
+	at org.mortbay.util.Scanner.reportBulkChanges(Scanner.java:493)
+	at org.mortbay.util.Scanner.reportDifferences(Scanner.java:359)
+	at org.mortbay.util.Scanner.scan(Scanner.java:286)
+	at org.mortbay.util.Scanner$1.run(Scanner.java:246)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: java.io.FileNotFoundException: class path resource [applicationContext-web.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:158)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:328)
+	... 26 more
