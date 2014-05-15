@@ -1,5 +1,6 @@
 package com.lenovo.vctl.apps.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.Serializable;
@@ -48,6 +49,7 @@ public class Material implements Serializable {
         this.deadline = deadline;
     }
 
+    @Column(name = "title")
     public String getTitle() {
         return title;
     }
@@ -56,6 +58,7 @@ public class Material implements Serializable {
         this.title = title;
     }
 
+    @Column(name = "type")
     public String getType() {
         return type;
     }
@@ -64,6 +67,7 @@ public class Material implements Serializable {
         this.type = type;
     }
 
+    @Column(name = "email")
     public String getEmail() {
         return email;
     }
@@ -72,6 +76,7 @@ public class Material implements Serializable {
         this.email = email;
     }
 
+    @Column(name = "emailcc")
     public String getEmailcc() {
         return emailcc;
     }
@@ -80,6 +85,7 @@ public class Material implements Serializable {
         this.emailcc = emailcc;
     }
 
+    @Column(name = "country")
     public String getCountry() {
         return country;
     }
@@ -88,6 +94,7 @@ public class Material implements Serializable {
         this.country = country;
     }
 
+    @Column(name = "commtyp")
     public String getCommtyp() {
         return commtyp;
     }
@@ -96,6 +103,7 @@ public class Material implements Serializable {
         this.commtyp = commtyp;
     }
 
+    @Column(name = "area")
     public String getArea() {
         return area;
     }
@@ -104,6 +112,7 @@ public class Material implements Serializable {
         this.area = area;
     }
 
+    @Column(name = "length")
     public String getLength() {
         return length;
     }
@@ -112,6 +121,7 @@ public class Material implements Serializable {
         this.length = length;
     }
 
+    @Column(name = "firsttime")
     public String getFirstTime() {
         return firstTime;
     }
@@ -120,6 +130,7 @@ public class Material implements Serializable {
         this.firstTime = firstTime;
     }
 
+    @Column(name = "deadline")
     public String getDeadline() {
         return deadline;
     }
