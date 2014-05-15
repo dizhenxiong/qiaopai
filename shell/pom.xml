@@ -256,7 +256,7 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
-        <finalName>app-image-web</finalName>
+        <finalName>app-shell-web</finalName>
         <plugins>
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
