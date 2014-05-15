@@ -1,6 +1,8 @@
 package com.lenovo.vctl.apps.model;
 
-import javax.persistence.Column;
+import org.hibernate.annotations.*;
+
+import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.Serializable;
@@ -19,8 +21,8 @@ public class Material implements Serializable {
 
     private static final long serialVersionUID = -7203343128718524236L;
 
+    private Long id;
     private String title; //标题
-
     private String type;
 
     private String email;
@@ -31,6 +33,7 @@ public class Material implements Serializable {
     private String length;  //持续时长
     private String firstTime; //开始时间
     private String deadline;  //截止时间
+    private int   cont;   //常量
 
     public Material() {
     }
@@ -47,6 +50,20 @@ public class Material implements Serializable {
         this.length = length;
         this.firstTime = firstTime;
         this.deadline = deadline;
+    }
+
+    @Id
+    @GeneratedValue(generator = "shell_file")
+    @GenericGenerator(name = "shell_file", strategy = "com.lenovo.vctl.dal.dao.id.util.IdGenerator", parameters = {@org.hibernate.annotations.Parameter(name = "sequence", value = "shell_file")})
+    @Column(name = "id")
+    public Long getId() {
+        return id;
+
+    }
+
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Column(name = "title")
@@ -139,9 +156,19 @@ public class Material implements Serializable {
         this.deadline = deadline;
     }
 
+    @Column(name = "cnt")
+    public int getCont() {
+        return cont;
+    }
+
+    public void setCont(int cont) {
+        this.cont = cont;
+    }
+
 
     @Override
     public String toString() {
+
         return "Material{" +
                 "title='" + title + '\'' +
                 ", type='" + type + '\'' +
