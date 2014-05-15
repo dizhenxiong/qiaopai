@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">标题*</label>
-                    <input name="title" type="email" class="form-control" id="" placeholder="">
+                    <input name="title"  class="form-control" id="" placeholder="">
                 </div>
 
                 <div class="form-group col-md-6">
@@ -124,7 +124,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="exampleInputFile">上传文件</label>
-                    <input type="file" id="exampleInputFile">
+                    <input type="file" name="file" id="exampleInputFile"/>
                 </div>
             </div>
             <div class="row">

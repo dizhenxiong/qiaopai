@@ -18,7 +18,7 @@
                   sqlType="hsql" keyProperty="userId" valueProperty="id" update="true"/>
 
             <dbStrategy name="" clasz="com.lenovo.vctl.dal.dao.route.strategy.DefaultStrategy">
-                <pattern value="[0-9A-Za-z]$" group="gr"/>
+                <pattern value="[0-9A-Za-z]$" group="g1"/>
             </dbStrategy>
         </object>
 
