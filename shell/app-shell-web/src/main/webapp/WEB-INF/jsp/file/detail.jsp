@@ -38,7 +38,7 @@
 
 <div class="container">
     <div class="row marketing">
-        <form role="form" action="/player/login" method="post"  >
+        <form role="form" action="/memory/uploadFile" method="post"  >
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">标题*</label>

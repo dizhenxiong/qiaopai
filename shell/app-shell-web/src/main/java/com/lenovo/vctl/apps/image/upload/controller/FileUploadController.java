@@ -93,7 +93,7 @@ public class FileUploadController extends BaseController {
         log.info("upload init complete.");
     }
 
-    @RequestMapping(value = "/file/uploadFile", method = RequestMethod.POST)
+    @RequestMapping(value = "/memory/uploadFile", method = RequestMethod.POST)
     public void uploadFile(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
         long start = System.currentTimeMillis(), localend = start, ftpend = start;
         String url = null;
@@ -151,7 +151,7 @@ public class FileUploadController extends BaseController {
                     fos.close();
             }
 //			model.put("url", url);
-            Material material = createMaterial(f,requestParamenters);
+            Material material = createMaterial(f, requestParamenters);
             masterialService.saveEntity(material);
             model.put(CREATEAT, System.currentTimeMillis());
             model.put(ERROR_CODE, ErrCode.NO_ERROR);// 没有错误
@@ -167,15 +167,15 @@ public class FileUploadController extends BaseController {
     }
 
 
-    public Material createMaterial(File f ,  Map<String, String> reqMaps){
-       Material material = new Material();
+    public Material createMaterial(File f, Map<String, String> reqMaps) {
+        Material material = new Material();
         material.setTitle(reqMaps.get("title"));
         material.setFirstTime(reqMaps.get("firstTime"));
         material.setsName("customer");
         material.setDeadline(reqMaps.get("deadline"));
         material.setsEmail("customer@shell.com");
         material.setsCompany(reqMaps.get("sCompany"));
-       return  material;
+        return material;
     }
 
     private String getSuffix(List<DiskFileItem> fileItems) {
@@ -190,9 +190,9 @@ public class FileUploadController extends BaseController {
                     e.printStackTrace(System.out);
                 }
                 System.out.println(fileName);
-                String[] strSub =fileName.split("\\.");
-                System.out.println("length : "+strSub.length);
-                for(String str: strSub){
+                String[] strSub = fileName.split("\\.");
+                System.out.println("length : " + strSub.length);
+                for (String str : strSub) {
                     System.out.println(str);
                 }
                 suffix = strSub[strSub.length - 1];

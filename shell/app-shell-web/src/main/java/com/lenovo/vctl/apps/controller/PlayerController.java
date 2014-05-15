@@ -27,7 +27,7 @@ public class PlayerController {
 	 * @return
 	 * @throws Exception
 	 */
-	@RequestMapping(value = "/index")
+	@RequestMapping(value = "/memory")
 	public String index(HttpServletRequest request, HttpServletResponse response, ModelMap model, String name,
 			String password) throws Exception {
 
@@ -44,14 +44,14 @@ public class PlayerController {
 	 * @return
 	 * @throws Exception
 	 */
-	@RequestMapping(value = "/player/login")
+	@RequestMapping(value = "/memory/login")
 	public String login(HttpServletRequest request, HttpServletResponse response, ModelMap model, String name,
 			String password) throws Exception {
 
 		if ("customer".equals(name)) {
-			return "redirect:/list";
+			return "redirect:/memory/list";
 		} else {
-			return "redirect:/detail";
+			return "redirect:/memory/detail";
 		}
 
 	}
@@ -65,7 +65,7 @@ public class PlayerController {
 	 * @return
 	 * @throws Exception
 	 */
-	@RequestMapping(value = "/player/offline")
+	@RequestMapping(value = "/memory/offline")
 	public String offline(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
 
 		return "redirect:/";
@@ -82,7 +82,7 @@ public class PlayerController {
 	 * @return
 	 * @throws Exception
 	 */
-	@RequestMapping(value = "/list")
+	@RequestMapping(value = "/memory/list")
 	public String list(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
 
 		return "file/list";
@@ -97,7 +97,7 @@ public class PlayerController {
 	 * @return
 	 * @throws Exception
 	 */
-	@RequestMapping(value = "/detail")
+	@RequestMapping(value = "/memory/detail")
 	public String detail(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
 
 		return "file/detail";

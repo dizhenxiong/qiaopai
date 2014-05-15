@@ -29,7 +29,7 @@
 
 <div class="container">
 
-    <form action="/player/login" method="post"   class="form-signin" role="form">
+    <form action="/memory/login" method="post"   class="form-signin" role="form">
         <h2 class="form-signin-heading">欢迎登陆</h2>
         <input name="name"      type="text" class="form-control" placeholder="用户名" required autofocus>
         <input name="password"  type="password" class="form-control" placeholder="密码" required>
