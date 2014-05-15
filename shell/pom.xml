@@ -4,9 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.lenovo</groupId>
-    <artifactId>app-shell-web</artifactId>
+    <groupId>com.shell</groupId>
+    <artifactId>shell</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <properties>
         <spring.version>3.0.5.RELEASE</spring.version>
         <spring.mvc.version>3.0.5.RELEASE</spring.mvc.version>
@@ -27,7 +28,7 @@
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
-            <version> 1.2.17</version>
+            <version>1.2.17</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -175,10 +176,6 @@
         </profile>
     </profiles>
     <build>
-
-        <filters>
-            <filter>src/main/resources/filters/${env}.properties</filter>
-        </filters>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -235,5 +232,10 @@
 
 
     </build>
-    
+
+
+    <modules>
+        <module>app-shell-web</module>
+    </modules>
+
 </project>
