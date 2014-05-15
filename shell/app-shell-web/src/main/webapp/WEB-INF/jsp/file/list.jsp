@@ -1,4 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page isELIgnored="false"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -17,32 +23,20 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-
-
-
-
 <!-- Bootstrap core CSS -->
 <link href="/r/bootstrap3/css/bootstrap.min.css" rel="stylesheet">
-
-
 <!-- Custom styles for this template -->
 <link href="/r/style.css" rel="stylesheet">
-
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-
-
 <script type="text/javascript" src="/r/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="/r/moment/moment.min.js"></script>
 <script type="text/javascript" src="/r/bootstrap2/js/bootstrap.min.js"></script>
-<script type="text/javascript"
-	src="/r/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-<link rel="stylesheet"
-	href="/r/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-
+<script type="text/javascript" src="/r/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet" href="/r/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
 </head>
 
 <body>
@@ -74,20 +68,23 @@
 								<th>公司</th>
 								<th>上传时间</th>
 								<th>状态</th>
-								<th>操作</th>
+								<%--<th>操作</th>--%>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>1</td>
-								<td>壳牌发展一期规划</td>
-								<td>康杨</td>
-								<td>搜狐</td>
-								<td>2014-05-15 10:22:11</td>
-								<td>未通过</td>
-								<td><a type="button" class="btn btn-default btn-xs"
-									href="/memory/detail">查看</a></td>
-							</tr>
+                        <c:forEach items ="${materials}" var = "material">
+                            <tr>
+                                <td>${material.id}</td>
+                                <td>${material.title}</td>
+                                <td>Customer</td>
+                                <td>${material.sCompany}</td>
+                                <td>${material.firstTime}</td>
+                                <td>${material.status}</td>
+                                <%--<td><a type="button" class="btn btn-default btn-xs" href="/memory/detail">查看</a></td>--%>
+                            </tr>
+
+                        </c:forEach>
+
 
 						</tbody>
 					</table>
