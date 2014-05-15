@@ -7,7 +7,7 @@
     <groupId>com.shell</groupId>
     <artifactId>app-shell-web</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <package>war</package>
+    <packaging>war</packaging>
 
     <parent>
         <groupId>com.shell</groupId>
