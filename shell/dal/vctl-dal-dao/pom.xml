@@ -21,7 +21,7 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.lenovo.vctl.dal.cache</groupId>
+			<groupId>com.shell</groupId>
 			<artifactId>vctl-dal-cache</artifactId>
 			<version>${vctl-dal-cache.version}</version>
 		</dependency>
