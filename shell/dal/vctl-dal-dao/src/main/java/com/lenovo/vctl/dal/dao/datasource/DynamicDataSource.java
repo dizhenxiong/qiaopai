@@ -1,5 +1,7 @@
 package com.lenovo.vctl.dal.dao.datasource;
 
+import java.sql.SQLFeatureNotSupportedException;
+
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
@@ -15,5 +17,11 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
             return datasourceName;
         }
     }
+
+
+	public java.util.logging.Logger getParentLogger() throws SQLFeatureNotSupportedException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
