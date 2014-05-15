@@ -4,6 +4,7 @@ import com.lenovo.vctl.apps.constants.DalConstants;
 import com.lenovo.vctl.apps.model.Material;
 import com.lenovo.vctl.apps.service.MasterialService;
 import org.apache.commons.collections.CollectionUtils;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
  * Time: 下午5:13
  * To change this template use File | Settings | File Templates.
  */
+@Component("materialservice" )
 public class MaterialServiceImpl extends DalBaseServiceImpl<Material> implements MasterialService<Material> {
     @Override
     public Class<Material> getEntityClass() {

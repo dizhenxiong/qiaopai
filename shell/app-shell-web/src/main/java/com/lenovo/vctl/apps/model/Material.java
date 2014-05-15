@@ -14,7 +14,7 @@ import java.io.Serializable;
  * Time: 下午3:05
  * To change this template use File | Settings | File Templates.
  */
-
+  //create table material (id bigint primary key auto_increment,title varchar(50) default "",sname varchar(50) default "",semail varchar(50) default "",semailcc varchar(50) default "",scompany varchar(50) default "",length varchar(50) default "",firsttime varchar(50) default "",deadline varchar(50) default "",type varchar(50) default "",ccommnet varchar(50) default "",area varchar(50) default "",status int default 1,cont int default 1) engine=innodb;
 @Entity
 @Table(name = "material")
 public class Material implements Serializable {

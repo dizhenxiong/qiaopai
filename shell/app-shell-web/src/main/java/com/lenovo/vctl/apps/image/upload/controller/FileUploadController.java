@@ -16,12 +16,15 @@ import java.util.Map;
 import java.util.UUID;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lenovo.vctl.apps.image.upload.util.DateUtil;
 import com.lenovo.vctl.apps.image.upload.util.ErrCode;
 import com.lenovo.vctl.apps.image.upload.util.PropertiesUtil;
+import com.lenovo.vctl.apps.model.Material;
+import com.lenovo.vctl.apps.service.MasterialService;
 import org.json.JSONObject;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.fileupload.FileUpload;
@@ -54,6 +57,13 @@ public class FileUploadController extends BaseController {
 
     private FileUpload upload = null;
     private DiskFileItemFactory factory = null;
+
+    @Resource(name = "materialservice")
+    private MasterialService<Material> masterialService;
+
+    public void setMasterialService(MasterialService<Material> masterialService) {
+        this.masterialService = masterialService;
+    }
 
     @PostConstruct
     public void init() {
@@ -125,6 +135,7 @@ public class FileUploadController extends BaseController {
 //				List<RecordObject> list = Store.getInstance().createFiles(bais, fs, UploadType.File.getSuffix(), UploadType.File.getType(),1, 0, false);// 保存到云存储使用异步方式
 //				ftpend = System.currentTimeMillis();
 //				url = list.get(0).getFtpUrl();
+
             } catch (Exception e) {
                 e.printStackTrace(System.out);
                 log.error(e.getMessage(), e);
@@ -140,6 +151,8 @@ public class FileUploadController extends BaseController {
                     fos.close();
             }
 //			model.put("url", url);
+            Material material = createMaterial(f,requestParamenters);
+            masterialService.saveEntity(material);
             model.put(CREATEAT, System.currentTimeMillis());
             model.put(ERROR_CODE, ErrCode.NO_ERROR);// 没有错误
         } catch (Exception e) {
@@ -151,6 +164,18 @@ public class FileUploadController extends BaseController {
 //		log.info("upload file success file="+file.getName()+",url="+url);
 //		log.info("upload file time,local="+(localend-start)+",ftp="+(ftpend-localend)+",total="+(ftpend-start)+",size="+file.getSize());
         response.getWriter().write(new JSONObject(model).toString());
+    }
+
+
+    public Material createMaterial(File f ,  Map<String, String> reqMaps){
+       Material material = new Material();
+        material.setTitle(reqMaps.get("title"));
+        material.setFirstTime(reqMaps.get("firstTime"));
+        material.setsName("customer");
+        material.setDeadline(reqMaps.get("deadline"));
+        material.setsEmail("customer@shell.com");
+        material.setsCompany(reqMaps.get("sCompany"));
+       return  material;
     }
 
     private String getSuffix(List<DiskFileItem> fileItems) {
