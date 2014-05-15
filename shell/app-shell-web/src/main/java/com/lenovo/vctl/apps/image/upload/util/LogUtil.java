@@ -8,8 +8,6 @@ import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 
-import com.lenovo.vctl.apps.commons.constants.SignConstant;
-
 public class LogUtil {
 
     public static final String PEFIX_INFO = "=== ";
@@ -65,11 +63,9 @@ public class LogUtil {
         StringBuilder sb = new StringBuilder();
         //action
         sb.append(actionName);
-        sb.append(SignConstant.SIGN_EQUAL);
 
         for(String value : values) {
             sb.append(ObjectUtils.toString(value, ""));
-            sb.append(SignConstant.ASC5);
         }
 
         //log into file

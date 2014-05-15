@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.lang.StringUtils;
 
-import com.lenovo.vctl.apps.commons.utils.GsonUtil;
-
 public class RequestUtil {
     /**
      * UserAgent 各位表示：

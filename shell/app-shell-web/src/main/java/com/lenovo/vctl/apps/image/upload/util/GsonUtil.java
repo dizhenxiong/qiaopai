@@ -12,17 +12,13 @@ import org.codehaus.jackson.type.TypeReference;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import com.lenovo.vctl.apps.commons.exclusion.gson.ExcludedExclusionStrategy;
 
 public class GsonUtil {
 
     private static Gson gson = new GsonBuilder()
             .enableComplexMapKeySerialization()
             .serializeNulls()
-            .disableHtmlEscaping()
-            .addSerializationExclusionStrategy(new ExcludedExclusionStrategy()) //包含@Excluded声明的字段将不会被序列化成json
-//								    .setPrettyPrinting() //不需要\n,缩进等拍版需要
-            .create();
+            .disableHtmlEscaping() .create();
 
     public static <T> T fromJson(String json, Class<T> clasz) {
 //		Gson gson = new GsonBuilder().create();
@@ -45,8 +41,7 @@ public class GsonUtil {
         Gson gson = new GsonBuilder()
                 .enableComplexMapKeySerialization()
                 .disableHtmlEscaping()
-                .addSerializationExclusionStrategy(new ExcludedExclusionStrategy()) //包含@Excluded声明的字段将不会被序列化成json
-                .create();
+             .create();
 
         return gson.toJson(src, srcType);
     }
