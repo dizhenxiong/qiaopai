@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.lenovo.vctl.apps.image.upload.util.DateUtil;
 import com.lenovo.vctl.apps.image.upload.util.ErrCode;
 import com.lenovo.vctl.apps.image.upload.util.PropertiesUtil;
-import net.sf.json.JSONObject;
+import org.json.JSONObject;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.fileupload.FileUpload;
 import org.apache.commons.fileupload.FileUploadException;
