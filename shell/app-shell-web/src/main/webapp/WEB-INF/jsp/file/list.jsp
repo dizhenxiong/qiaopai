@@ -54,7 +54,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="">退出</a></li>
+                    <li><a type="button" href="/" class="btn">退出</a></li>
 				</ul>
 			</div>
 		</div>
