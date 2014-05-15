@@ -39,30 +39,30 @@
         <property name="suffix" value=".jsp"></property>
     </bean>
 
-    <bean id="cronQuartzJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
-        <property name="jobDetail">
-            <ref bean="jobTask"/>
-        </property>
-        <property name="cronExpression">
-            <value>0 0 * * * ?</value>
-        </property>
-    </bean>
-    <bean id="jobTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
-        <!-- 调用的类 -->
-        <property name="targetObject">
-            <ref bean="clearTmpDirJob"/>
-        </property>
-        <!-- 调用类中的方法 -->
-        <property name="targetMethod">
-            <value>work</value>
-        </property>
-    </bean>
-    <bean id="clearTmpDirJob" class="com.lenovo.vctl.apps.image.quartz.job.ClearTmpDirJob"></bean>
-    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false">
-        <property name="triggers">
-            <list>
-                <ref bean="cronQuartzJobTrigger"/>
-            </list>
-        </property>
-    </bean>
+    <!--<bean id="cronQuartzJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+        <!--<property name="jobDetail">-->
+            <!--<ref bean="jobTask"/>-->
+        <!--</property>-->
+        <!--<property name="cronExpression">-->
+            <!--<value>0 0 * * * ?</value>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--<bean id="jobTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+        <!--&lt;!&ndash; 调用的类 &ndash;&gt;-->
+        <!--<property name="targetObject">-->
+            <!--<ref bean="clearTmpDirJob"/>-->
+        <!--</property>-->
+        <!--&lt;!&ndash; 调用类中的方法 &ndash;&gt;-->
+        <!--<property name="targetMethod">-->
+            <!--<value>work</value>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--<bean id="clearTmpDirJob" class="com.lenovo.vctl.apps.image.quartz.job.ClearTmpDirJob"></bean>-->
+    <!--<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false">-->
+        <!--<property name="triggers">-->
+            <!--<list>-->
+                <!--<ref bean="cronQuartzJobTrigger"/>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
 </beans>
