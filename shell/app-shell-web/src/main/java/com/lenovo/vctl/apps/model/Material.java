@@ -36,6 +36,8 @@ public class Material implements Serializable {
     private String area;  //shell的大区
     private int status; //当前的审核状态  1.审核中  2.审核通过  3.审核不通过
     private int cont;//常量
+    private String url;
+
 
     public Material() {
     }
@@ -186,6 +188,15 @@ public class Material implements Serializable {
 
     public void setCont(int cont) {
         this.cont = cont;
+    }
+
+    @Column(name = "url")
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @Override
