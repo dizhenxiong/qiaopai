@@ -9,6 +9,7 @@
     <groupId>com.shell</groupId>
     <artifactId>vctl-redis-client</artifactId>
     <version>1.1-SNAPSHOT</version>
+    <name>vctl-redis-client</name>
 
     <dependencies>
         <dependency>
