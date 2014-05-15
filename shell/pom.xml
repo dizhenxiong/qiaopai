@@ -314,6 +314,7 @@
         <module>vctl-redis-client</module>
         <module>app-storage-client</module>
         <module>app-ftp-client</module>
+        <module>dal</module>
     </modules>
 
 </project>
