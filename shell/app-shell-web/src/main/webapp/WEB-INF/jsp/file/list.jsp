@@ -87,7 +87,7 @@
 								<td>2014-05-15 10:22:11</td>
 								<td>未通过</td>
 								<td><a type="button" class="btn btn-default btn-xs"
-									href="/detail">查看</a></td>
+									href="/memory/detail">查看</a></td>
 							</tr>
 
 						</tbody>
