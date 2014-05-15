@@ -108,7 +108,7 @@
                     中国
                 </div>
                 <div class="form-group col-md-6">
-                    <label for=""> <a href="http://download.shell.ptteng.com/${material.url}"></a></label>
+                    <label for=""> <a href="http://download.shell.ptteng.com/${material.url}">附件</a></label>
 
                 </div>
             </div>
