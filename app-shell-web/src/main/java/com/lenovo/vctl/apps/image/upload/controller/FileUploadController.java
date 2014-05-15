@@ -1,6 +1,5 @@
 package com.lenovo.vctl.apps.image.upload.controller;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -8,7 +7,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -21,6 +19,9 @@ import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.lenovo.vctl.apps.image.upload.util.DateUtil;
+import com.lenovo.vctl.apps.image.upload.util.ErrCode;
+import com.lenovo.vctl.apps.image.upload.util.PropertiesUtil;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.fileupload.FileUpload;
 import org.apache.commons.fileupload.FileUploadException;
@@ -38,12 +39,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import com.lenovo.vctl.apps.image.enums.UploadType;
-import com.lenovo.vctl.apps.user.util.DateUtil;
-import com.lenovo.vctl.apps.util.PropertiesUtil;
-import com.lenovo.vctl.apps.web.commons.ErrCode;
-import com.lenovo.vctl.cloudstorage.core.Store;
-import com.lenovo.vctl.cloudstorage.model.RecordObject;
+
 
 @Controller
 public class FileUploadController extends BaseController {

@@ -9,10 +9,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.lenovo.vctl.apps.image.upload.util.*;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.fileupload.FileUpload;
 import org.apache.commons.fileupload.FileUploadException;
@@ -27,13 +27,6 @@ import org.codehaus.jackson.map.JsonSerializer;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.SerializerProvider;
 import org.codehaus.jackson.map.ser.StdSerializerProvider;
-import com.lenovo.vctl.apps.commons.constants.BIConstant;
-import com.lenovo.vctl.apps.commons.utils.LogUtil;
-import com.lenovo.vctl.apps.util.JsonCallBackTemplate;
-import com.lenovo.vctl.apps.util.JsonCallbackAdapter;
-import com.lenovo.vctl.apps.util.RequestUtil;
-import com.lenovo.vctl.apps.web.commons.ErrCode;
-import com.lenovo.vctl.apps.web.commons.ResultPropertyes;
 
 
 public abstract class BaseController {
@@ -131,11 +124,7 @@ public abstract class BaseController {
                     generator.writeStringField(TID, (model.get(TID)) + "");
                     generator.writeStringField(CREATEAT, (model.get(CREATEAT)) + "");
                     generator.writeStringField(type, (String) (model.get(type)) + "");
-                    
-                  //bilog  1.2	语音日志信息action_voice=
-    				String headerJson = RequestUtil.getHeadersJsonString(request);
-    				LogUtil.statInfo(statusLogger, BIConstant.ACTION_VOICE, headerJson,(model.get(USER_ID)==null ? "" : model.get(USER_ID)).toString(), 
-    						model.get(this.TO_USER_ID).toString(), "1", "0", "",  String.valueOf(System.currentTimeMillis()));
+
                 } else if(type.equals(PIC) || type.equals(PIC_OBJECT)){
                 	Set<String> keys = model.keySet();
                 	for(String key : keys){
