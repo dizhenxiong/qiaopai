@@ -14,6 +14,7 @@ import java.util.Set;
 import java.util.Map.Entry;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import com.lenovo.vctl.cloudstorage.UploadType;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.map.LRUMap;
 import org.apache.commons.lang.ArrayUtils;
@@ -28,8 +29,6 @@ import org.apache.commons.pool.impl.GenericObjectPool;
 //import org.apache.log4j.chainsaw.Main;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.lenovo.vctl.apps.commons.image.UploadType;
 import com.lenovo.vctl.cloudstorage.ftp.FromItem;
 import com.lenovo.vctl.cloudstorage.ftp.FtpConfig;
 import com.lenovo.vctl.cloudstorage.ftp.FtpItem;
