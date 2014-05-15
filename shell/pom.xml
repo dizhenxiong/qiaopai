@@ -220,6 +220,7 @@
         <module>app-shell-web</module>
         <module>commons-core</module>
         <module>vctl-storage-client</module>
+        <module>vctl-redis-client</module>
     </modules>
 
 </project>

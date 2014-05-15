@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <cache>
+    	<datasource name="default" port="6379" server="redis2.vctal.lenovo.com" maxActive="18"
+                    maxIdle="18" maxWait="-1" timeout="5000">
+        </datasource>
+        <datasource name="mymaster" port="6379" server="redis2.vctal.lenovo.com" maxActive="18"
+                    maxIdle="18" maxWait="-1" timeout="5000">
+        	<sentinel name="sdefault1" port="26379" server="redis2.vctal.lenovo.com" timeout="5000"/>
+        	<sentinel name="sdefault2" port="36380" server="redis2.vctal.lenovo.com" timeout="5000"/>
+        	<sentinel name="sdefault2" port="36381" server="redis2.vctal.lenovo.com" timeout="5000"/>
+        </datasource>
+        <datasource name="redisMaster2" timeout="5000" port="6380" server="redis2.vctal.lenovo.com" maxActive="18"
+                    maxIdle="18" maxWait="-1">
+        </datasource>
+    </cache>
+	
+	<regions>
+		<region name="redis_client_df"
+			strategyClass="com.lenovo.vctl.redis.client.route.strategy.impl.DefaultStrategy">
+			<keyPattern value="[0-4A-Ma-m]$" datasource="default" />
+			<keyPattern value="[5-9N-Zn-z]$" datasource="redisMaster2" />
+		</region>
+	</regions>
+	
+	<regions>
+		<region name="redis_balance"
+			strategyClass="com.lenovo.vctl.redis.client.route.strategy.impl.BalanceStrategy">
+		</region>
+	</regions>
+	
+	
+	<regions>
+		<region name="sentinel"
+			strategyClass="com.lenovo.vctl.redis.client.route.strategy.impl.DefaultStrategy">
+			<keyPattern value="[0-4A-Za-z]$" datasource="mymaster" />
+		</region>
+	</regions>
+</root>
+
