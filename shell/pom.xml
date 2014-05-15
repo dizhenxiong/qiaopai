@@ -123,6 +123,7 @@
             <artifactId>httpmime</artifactId>
             <version>4.2.1</version>
         </dependency>
+
     </dependencies>
     <profiles>
         <!-- 开发环境，默认激活 -->
