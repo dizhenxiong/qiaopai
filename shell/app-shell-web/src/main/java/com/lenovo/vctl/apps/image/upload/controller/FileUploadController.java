@@ -102,8 +102,6 @@ public class FileUploadController extends BaseController {
             File f = new File(sPath + "/" + fileName + "." + suffix);
             FileOutputStream fos = new FileOutputStream(f);
             file = fileItems.get(0);
-
-
             InputStream is = file.getInputStream();
             int n = 1;
             ByteArrayOutputStream[] baos = new ByteArrayOutputStream[n];
