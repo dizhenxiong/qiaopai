@@ -3,7 +3,7 @@ package com.lenovo.vctl.apps.image.upload.util;
 
 import java.util.Map;
 
-import com.lenovo.vctl.apps.util.JsonCallback;
+import com.lenovo.vctl.apps.image.JsonCallback;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.JsonGenerator;
 

@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
 
+import com.lenovo.vctl.apps.image.JsonCallback;
 import com.lenovo.vctl.apps.util.JsonCallback;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.JsonFactory;
