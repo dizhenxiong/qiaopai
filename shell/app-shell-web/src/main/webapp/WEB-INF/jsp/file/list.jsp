@@ -35,8 +35,10 @@
 <script type="text/javascript" src="/r/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="/r/moment/moment.min.js"></script>
 <script type="text/javascript" src="/r/bootstrap2/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/r/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-<link rel="stylesheet" href="/r/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+<script type="text/javascript"
+	src="/r/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet"
+	href="/r/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
 </head>
 
 <body>
@@ -48,55 +50,63 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-                    <li><a type="button" href="/" class="btn">退出</a></li>
+					<li><a type="button" href="/" class="btn btn-error">退出</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 
-    <a type="button" class="btn btn-default btn-xs" href="/memory/create">创建</a>
+
+
+
 
 	<div class="container">
 
+
+		<div class="row">
+			<a type="button" class="btn btn-default btn-success"
+				href="/memory/create">创建</a>
+		</div>
+
 		<div class="row marketing">
-			<div class="row">
-				<div class="col-md-12">
-					<table class="table table-bordered">
-						<thead>
+			<div class="col-md-12">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>文件名称</th>
+							<th>姓名</th>
+							<th>公司</th>
+							<th>上传时间</th>
+							<th>状态</th>
+							<th>查看</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${materials}" var="material">
 							<tr>
-								<th>序号</th>
-								<th>文件名称</th>
-								<th>姓名</th>
-								<th>公司</th>
-								<th>上传时间</th>
-								<th>状态</th>
-								<th>查看</th>
+								<td>${material.id}</td>
+								<td>${material.title}</td>
+								<td>Customer</td>
+								<td>${material.sCompany}</td>
+								<td>${material.firstTime}</td>
+								<td>${material.status}</td>
+								<td><a type="button" class="btn btn-default btn-xs"
+									href="/memory/detail?id=${material.id}">查看</a></td>
 							</tr>
-						</thead>
-						<tbody>
-                        <c:forEach items ="${materials}" var = "material">
-                            <tr>
-                                <td>${material.id}</td>
-                                <td>${material.title}</td>
-                                <td>Customer</td>
-                                <td>${material.sCompany}</td>
-                                <td>${material.firstTime}</td>
-                                <td>${material.status}</td>
-                                <td><a type="button" class="btn btn-default btn-xs" href="/memory/detail?id=${material.id}">查看</a></td>
-                            </tr>
 
-                        </c:forEach>
+						</c:forEach>
 
 
-						</tbody>
-					</table>
-				</div>
+					</tbody>
+				</table>
 			</div>
 		</div>
+	</div>
 
-		<div class="footer">
-			<p>&copy; Company 2014</p>
-		</div>
+	<div class="footer">
+		<p>&copy; Company 2014</p>
+	</div>
 
 
 	</div>

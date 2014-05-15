@@ -49,7 +49,7 @@ public class PlayerController {
 
         if (DalConstants.NAME_CUSTOMER.equals(name) && DalConstants.PASSWD_CUSTOMER.equals(password)) {
             return "redirect:/memory/list?id=" + DalConstants.ID_CUSTOMER;
-        } else if (DalConstants.NAME_SPEC.equals(name) && DalConstants.ID_SPCE.equals(password)) {
+        } else if (DalConstants.NAME_SPEC.equals(name) && DalConstants.PASSWD_SPEC.equals(password)) {
             return "redirect:/memory/list?id=" + DalConstants.ID_SPCE;
         } else {
             return "index";
