@@ -82,7 +82,7 @@
                                 <td>${material.sCompany}</td>
                                 <td>${material.firstTime}</td>
                                 <td>${material.status}</td>
-                                <td><a type="button" class="btn btn-default btn-xs" href="/memory/detail?${material.id}">查看</a></td>
+                                <td><a type="button" class="btn btn-default btn-xs" href="/memory/detail?id=${material.id}">查看</a></td>
                             </tr>
 
                         </c:forEach>
