@@ -46,7 +46,6 @@
 </head>
 
 <body>
-	<<<<<<< HEAD
 	<div class="navbar navbar-inverse">
 		<div class="container">
 			<div class="navbar-header">
