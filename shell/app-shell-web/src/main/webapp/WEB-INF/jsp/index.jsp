@@ -1,28 +1,24 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%@ page language="java" pageEncoding="UTF-8"%>
 <html>
-<head>
-
-
-    <title>My JSP 'index.jsp' starting page</title>
-
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="cache-control" content="no-cache">
-    <meta http-equiv="expires" content="0">
-    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-    <meta http-equiv="description" content="This is my page">
-    <!--
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    -->
-
-</head>
-
 <body>
-<form action="/file/uploadFile" method="post" enctype="multipart/form-data">
-    文件 <input type="file" name="file"/>
-    type<input type="input" name="type" value="0"/>
-    name <input type="input" name="name" id="name" value=""/>
-    <input type="submit"/>
-</form>
+	
+
+	<form action="/player/login" method="post" class="login-box">
+		<br> <br>
+		<h3>使用您的注册邮箱/葡萄号登录:</h3>
+		<label for="name">name</label> <input type="text" id="name"
+			name="name" placeholder="用户名" class="login email-input">
+		<label for="password">密码</label> <input type="password" id="password"
+			name="password" placeholder="Please enter your password here"
+			class="login password-input">
+	
+
+		<div class="login-action">
+			
+			<button class="btn btn-primary btn-large pull-right">登录</button>
+		</div>
+	</form>
+
+
 </body>
 </html>

@@ -1,7 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <html>
 <body>
-	<h2>Hello World!</h2>
+	
 
 	<form action="/player/login" method="post" class="login-box">
 		<br> <br>
