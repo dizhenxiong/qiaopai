@@ -12,15 +12,15 @@ import java.util.concurrent.TimeUnit;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+import com.lenovo.vctl.apps.image.process.ImageUtil;
+import com.lenovo.vctl.apps.image.transform.TransformPic;
+import com.lenovo.vctl.apps.image.upload.util.GsonUtil;
+import com.lenovo.vctl.cloudstorage.core.Store;
+import com.lenovo.vctl.redis.client.util.RedisUtil;
 import org.apache.log4j.Logger;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-import com.lenovo.vctl.apps.commons.utils.GsonUtil;
-import com.lenovo.vctl.apps.image.process.ImageUtil;
-import com.lenovo.vctl.apps.image.transform.TransformPic;
-import com.lenovo.vctl.cloudstorage.core.Store;
-import com.lenovo.vctl.redis.client.util.RedisUtil;
 
 public class Listener extends ContextLoaderListener implements ServletContextListener{
 	
