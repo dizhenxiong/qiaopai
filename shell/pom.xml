@@ -236,6 +236,8 @@
 
     <modules>
         <module>app-shell-web</module>
+        <module>commons-core</module>
+        <module>vctl-storage-client</module>
     </modules>
 
 </project>
