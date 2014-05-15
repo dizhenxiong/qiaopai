@@ -1,9 +1,20 @@
 /* Space out content a bit */
 body {
-    padding-top: 20px;
     padding-bottom: 20px;
 }
-
+.navbar .navbar-collapse {
+    float: right;
+}
+.navbar-brand {
+    padding: 10px 15px 0;
+    font-size: 30px;
+    line-height: 30px;
+    font-family: 'microsoft yahei', 'simhei';
+}
+.navbar-brand img {
+    height: 30px;
+    vertical-align: text-bottom;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,

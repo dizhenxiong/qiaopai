@@ -53,7 +53,7 @@
     <div class="header">
         <ul class="nav nav-pills pull-right">
             <li class="active"><a href="#">Login</a></li>
-            <li><a href="#">Detail</a></li>
+            <li><a href="/detail">Detail</a></li>
         </ul>
         <h3 class="text-muted">Product List Table</h3>
     </div>
