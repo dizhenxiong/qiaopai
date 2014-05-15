@@ -16,4 +16,6 @@ public interface MasterialService<Material>  extends DalBaseService<Material> {
     public List<Material> getUserMaterialList(Long userId) throws Exception;
 
     public List<Material> getAllMaterialList() throws Exception;
+
+    public List<Material> getNewMaterialList() throws Exception;
 }

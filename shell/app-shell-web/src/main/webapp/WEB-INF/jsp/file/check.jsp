@@ -42,26 +42,28 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">标题*</label>
-                    ${material.title}
+                    <input name="title"  class="form-control" id="" placeholder="" disabled>
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="">材料长度*</label>
-                    10米
+                    <label for="">材料长度*</label> <select class="form-control">
+                    <option value="">Select</option>
+                </select>
                 </div>
             </div>
             <div class="row">
 
                 <div class="form-group col-md-6">
-                    <label for="">备注*</label>
-
+                    <label for="">备注*</label> <select class="form-control">
+                    <option value="">Select Material</option>
+                </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="">计划时间</label>
 
                     <div class='input-group date datetimepicker' id=''
                          data-date-format="YYYY/MM/DD">
-                        ${material.firstTime}
+                        <input name="firstTime" type='text' class="form-control"/>
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -71,17 +73,24 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">邮箱抄送地址</label>
-                    ${material.sEmailcc}
+                    <input type="email" name="sEmailcc" class="form-control" id="" placeholder="">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="">截止日期*</label> <label>
-                      ${material.deadline}
+                    <div class='input-group date datetimepicker' id='' data-date-format="YYYY/MM/DD">
+                        <input name="deadline" type='text' class="form-control"/>
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">合资公司*</label>
-                    ${material.sCompany}
+                    <select name="sCompany" class="form-control">
+                        <option value="Intel">英特尔</option>
+                    </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label class="control-label">Job ID</label>
@@ -94,35 +103,42 @@
             <div class="row">
 
                 <div class="form-group col-md-6">
-                    <label for="">通讯类型*</label>
-                    EMAIL
+                    <label for="">通讯类型*</label> <select class="form-control">
+                    <option value="">Select Communication Type</option>
+                </select>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="">MediaHub Reference</label>
+                    <label for="">MediaHub Reference</label> <input type="email"
+                                                                    class="form-control" id="" placeholder="">
                 </div>
 
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">壳牌地区*</label>
-                    中国
+                    <select class="form-control" name="area">
+                        <option value="">Select Area of Shell Business or
+                            Function
+                        </option>
+                    </select>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for=""> <a href="http://download.shell.ptteng.com/${material.url}"></a></label>
-
+                    <label for="exampleInputFile">上传文件</label>
+                    <input type="file" name="file" id="exampleInputFile"/>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12">
                     <lable>附言</lable>
-
+                    <textarea class="form-control" rows="3"></textarea>
 
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-12">
-                    <a href="/memory/list?id=1">返回</a>
+                    <button type="submit" class="btn btn-success">提交</button>
+                    <%--<button type="button" class="btn btn-primary">审核</button>--%>
                 </div>
             </div>
         </form>

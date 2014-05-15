@@ -13,4 +13,22 @@ public class DalConstants {
 
     public static final String USER_ALLMATERIAL_ID_LIST = "USER_ALLMATERIAL_ID_LIST";   //全局预案
 
+    public static final String USER_MATERIAL_STATUS_ID_LIST="USER_MATERIAL_STATUS_ID_LIST";//专家看到的预案
+
+    //预案的三种状态
+    public static final int STATSS_NEW = 1; // 审核中
+    public static final int STATUS_FAIL = 2;//审核失败
+    public static final int STATUS_SUCCESS = 3;//审核成功
+
+    // 用户姓名
+
+    public static final String NAME_CUSTOMER = "customer";
+    public static final String PASSWD_CUSTOMER = "customer";
+    public static final String ID_CUSTOMER = "1";
+
+    public static final String NAME_SPEC = "shell";
+    public static final String PASSWD_SPEC = "shell";
+    public static final String ID_SPCE = "2";
+
+
 }

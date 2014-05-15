@@ -13,9 +13,14 @@
             <list name="USER_MATERIAL_ID_LIST"
                   sqlitem="select id from material where user_id=? "
                   sqlType="hsql" keyProperty="userId" valueProperty="id" update="true"/>
+
             <list name="USER_ALLMATERIAL_ID_LIST"
                   sqlitem="select id from material where 1=? "
                   sqlType="hsql" keyProperty="userId" valueProperty="id" update="true"/>
+
+            <list name="USER_MATERIAL_STATUS_ID_LIST"
+                  sqlitem="select id from material where status=? "
+                  sqlType="hsql" keyProperty="status" valueProperty="id" update="true"/>
 
             <dbStrategy name="" clasz="com.lenovo.vctl.dal.dao.route.strategy.DefaultStrategy">
                 <pattern value="[0-9A-Za-z]$" group="g1"/>

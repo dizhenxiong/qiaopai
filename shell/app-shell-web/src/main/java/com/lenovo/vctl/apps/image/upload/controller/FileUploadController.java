@@ -20,6 +20,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.lenovo.vctl.apps.constants.DalConstants;
 import com.lenovo.vctl.apps.image.upload.util.DateUtil;
 import com.lenovo.vctl.apps.image.upload.util.ErrCode;
 import com.lenovo.vctl.apps.image.upload.util.PropertiesUtil;
@@ -94,13 +95,14 @@ public class FileUploadController extends BaseController {
     }
 
     @RequestMapping(value = "/memory/uploadFile", method = RequestMethod.POST)
-    public void uploadFile(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
+    public String uploadFile(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
         long start = System.currentTimeMillis(), localend = start, ftpend = start;
         String url = null;
         DiskFileItem file = null;
+        Map<String, String> requestParamenters = new HashMap<String, String>();
         try {
             List<DiskFileItem> fileItems = new ArrayList<DiskFileItem>();
-            Map<String, String> requestParamenters = new HashMap<String, String>();
+            requestParamenters = new HashMap<String, String>();
             fillFileItemAndRequestParameter(request, requestParamenters, fileItems);
             String suffix = getSuffix(fileItems);
             System.out.println("suffix is : " + suffix);
@@ -163,7 +165,8 @@ public class FileUploadController extends BaseController {
         }
 //		log.info("upload file success file="+file.getName()+",url="+url);
 //		log.info("upload file time,local="+(localend-start)+",ftp="+(ftpend-localend)+",total="+(ftpend-start)+",size="+file.getSize());
-        response.getWriter().write(new JSONObject(model).toString());
+//        response.getWriter().write(new JSONObject(model).toString());
+        return "redirect:/memory/list?id="+ DalConstants.ID_CUSTOMER;
     }
 
 

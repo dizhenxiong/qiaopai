@@ -1,7 +1,9 @@
 package com.lenovo.vctl.apps.controller;
 
+import com.lenovo.vctl.apps.constants.DalConstants;
 import com.lenovo.vctl.apps.model.Material;
 import com.lenovo.vctl.apps.service.MasterialService;
+import com.sun.org.apache.bcel.internal.generic.DALOAD;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
@@ -30,15 +32,7 @@ public class PlayerController {
         this.masterialService = masterialService;
     }
 
-    /**
-     * 玩家登入
-     *
-     * @param request
-     * @param response
-     * @param model
-     * @return
-     * @throws Exception
-     */
+
     @RequestMapping(value = "/memory")
     public String index(HttpServletRequest request, HttpServletResponse response, ModelMap model, String name,
                         String password) throws Exception {
@@ -48,34 +42,26 @@ public class PlayerController {
     }
 
     /**
-     * 玩家登入
-     *
-     * @param request
-     * @param response
-     * @param model
-     * @return
-     * @throws Exception
+     * 登入
      */
     @RequestMapping(value = "/memory/login")
     public String login(HttpServletRequest request, HttpServletResponse response, ModelMap model, String name,
                         String password) throws Exception {
 
-        if ("customer".equals(name)) {
-            return "redirect:/memory/list";
-        } else {
-            return "redirect:/memory/detail";
+        if (DalConstants.NAME_CUSTOMER.equals(name) && DalConstants.PASSWD_CUSTOMER.equals(password)) {
+            return "redirect:/memory/list?id="+DalConstants.ID_CUSTOMER;
+        }
+        else if(DalConstants.NAME_SPEC.equals(name) && DalConstants.ID_SPCE.equals(password)){
+            return  "redirect:/memory/list?id="+DalConstants.ID_SPCE;
+        }
+        else {
+            return "index";
         }
 
     }
 
     /**
-     * 玩家退出网站
-     *
-     * @param request
-     * @param response
-     * @param model
-     * @return
-     * @throws Exception
+     * 退出网站
      */
     @RequestMapping(value = "/memory/offline")
     public String offline(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
@@ -83,37 +69,43 @@ public class PlayerController {
         return "redirect:/";
     }
 
+    /**
+     * 供应商提交资料，创建预案
+     */
+
+    @RequestMapping(value = "/memory/create")
+    public String create(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
+        return "file/create";
+
+    }
 
     /**
-     * 玩家退出网站
-     *
-     * @param request
-     * @param response
-     * @param model
-     * @return
-     * @throws Exception
+     * 查看某个预案的详情
+     */
+    @RequestMapping(value = "/memory/detail")
+    public String detail(HttpServletRequest request, HttpServletResponse response, Long id, ModelMap model) throws Exception {
+        Material material = masterialService.getEntity(id);
+        model.put("material", material);
+        return "file/detail";
+    }
+
+    /**
+     * 获取所有预案的列表
      */
     @RequestMapping(value = "/memory/list")
-    public String list(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
+    public String list(HttpServletRequest request, HttpServletResponse response,String id, ModelMap model) throws Exception {
 
-        List<Material> materialList = masterialService.getAllMaterialList();
-        model.addAttribute("materials",materialList);
+        if(DalConstants.ID_CUSTOMER.equalsIgnoreCase(id)){
+            List<Material> materialList = masterialService.getAllMaterialList();
+            model.addAttribute("materials", materialList);
+        }
+        else if(DalConstants.ID_SPCE.equalsIgnoreCase(id)){
+            List<Material> materialList = masterialService.getNewMaterialList();
+            model.addAttribute("materials", materialList);
+        }
         return "file/list";
 
     }
 
-    /**
-     * 玩家退出网站
-     *
-     * @param request
-     * @param response
-     * @param model
-     * @return
-     * @throws Exception
-     */
-    @RequestMapping(value = "/memory/detail")
-    public String detail(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
 
-        return "file/detail";
-    }
 }

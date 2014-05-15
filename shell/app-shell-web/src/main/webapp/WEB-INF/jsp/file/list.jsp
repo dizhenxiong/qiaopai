@@ -54,6 +54,8 @@
 		</div>
 	</div>
 
+    <a type="button" class="btn btn-default btn-xs" href="/memory/create">创建</a>
+
 	<div class="container">
 
 		<div class="row marketing">
@@ -68,7 +70,7 @@
 								<th>公司</th>
 								<th>上传时间</th>
 								<th>状态</th>
-								<%--<th>操作</th>--%>
+								<th>查看</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -80,7 +82,7 @@
                                 <td>${material.sCompany}</td>
                                 <td>${material.firstTime}</td>
                                 <td>${material.status}</td>
-                                <%--<td><a type="button" class="btn btn-default btn-xs" href="/memory/detail">查看</a></td>--%>
+                                <td><a type="button" class="btn btn-default btn-xs" href="/memory/detail?${material.id}">查看</a></td>
                             </tr>
 
                         </c:forEach>
