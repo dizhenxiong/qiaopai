@@ -85,8 +85,8 @@ public class PlayerController {
     public String detail(HttpServletRequest request, HttpServletResponse response, Long id, ModelMap model) throws Exception {
         Material material = masterialService.getEntity(id);
         model.put("material", material);
-        model.addAttribute("bdis","disable");
-        model.addAttribute("adis","disable");
+        model.addAttribute("bdis","readonly");
+        model.addAttribute("adis","readonly");
         return "file/create";
     }
 
