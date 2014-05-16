@@ -177,10 +177,12 @@
 
 						$("#disagree").on('click', function() {
 							$("#status").value(2);
+							e.submit();
 						})
 
 						$("#agree").on('click', function() {
 							$("#status").value(3);
+							e.submit();
 
 						})
 					</script>
