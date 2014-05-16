@@ -44,7 +44,7 @@
 <div class="container">
     <div class="row marketing">
         <form role="form" action="${iurl}" method="post"
-              <c:if test="${id==1}">
+              <c:if test="${num==1}">
                   enctype="multipart/form-data"
               </c:if>
               >
