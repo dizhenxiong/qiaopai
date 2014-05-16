@@ -50,4 +50,21 @@ public class MaterialServiceImpl extends DalBaseServiceImpl<Material> implements
         return getObjectList(idLs);
 
     }
+
+    public List<Material> fullMaterialList(List<Material> materials){
+        List<Material> materialList = new ArrayList<Material>();
+        for(Material material: materials){
+            if(material.getStatus() == DalConstants.STATSS_NEW){
+                material.setStatusName("审核中");
+            }
+            else if(material.getStatus() == DalConstants.STATUS_FAIL){
+                material.setStatusName("审核拒绝");
+            }
+            else if(material.getStatus() == DalConstants.STATUS_SUCCESS){
+                material.setStatusName("审核通过");
+            }
+            materialList.add(material);
+        }
+        return  materialList;
+    }
 }

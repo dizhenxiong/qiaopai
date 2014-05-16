@@ -87,7 +87,7 @@
 								<td>Customer</td>
 								<td>${material.sCompany}</td>
 								<td>${material.firstTime}</td>
-								<td>${material.status}</td>
+								<td>${material.statusName}</td>
 
 								<td>
                                     <c:if test="${id=='1'}">

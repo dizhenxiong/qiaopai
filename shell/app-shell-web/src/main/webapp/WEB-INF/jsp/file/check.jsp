@@ -139,7 +139,7 @@
             <input type="hidden" name="id" value="${material.id}"/>
             <div class="row">
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-success">拒绝</button>
+                    <button type="submit" class="btn btn-success" >拒绝</button>
                     <button type="submit" class="btn btn-success">通过</button>
                     <%--<button type="button" class="btn btn-primary">审核</button>--%>
                 </div>

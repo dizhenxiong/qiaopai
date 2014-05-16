@@ -37,6 +37,7 @@ public class Material implements Serializable {
     private int status; //当前的审核状态  1.审核中  2.审核通过  3.审核不通过
     private int cont;//常量
     private String url;
+    private String statusName; //状态对应的名字
 
 
     public Material() {
@@ -199,6 +200,15 @@ public class Material implements Serializable {
         this.url = url;
     }
 
+
+    @Transient
+    public String getStatusName() {
+        return statusName;
+    }
+
+    public void setStatusName(String statusName) {
+        this.statusName = statusName;
+    }
     @Override
     public String toString() {
         return "Material{" +
