@@ -145,7 +145,14 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-success">提交</button>
+                    <a href="/memory/list?id=${userid}">返回</a>
+                    <c:if test="${num == 1}">
+                        <button type="submit" class="btn btn-success">提交</button>
+                    </c:if>
+                    <c:if test="${num == 3}">
+                        <button type="submit" class="btn btn-success" id="disagree">拒绝</button>
+                        <button type="submit" class="btn btn-success" id="agree">通过</button>
+                    </c:if>
                 </div>
             </div>
         </form>
@@ -155,12 +162,23 @@
     </div>
 
 </div>
+
 <script type="text/javascript">
-    $(function () {
+    $(function() {
         $('.datetimepicker').datetimepicker({
-            pickTime: false
+            pickTime : false
         });
     });
+
+    $("#disagree").on('click', function() {
+        $("#status").value(2);
+    })
+
+    $("#agree").on('click', function() {
+        $("#status").value(3);
+
+    })
 </script>
+</body>
 </body>
 </html>

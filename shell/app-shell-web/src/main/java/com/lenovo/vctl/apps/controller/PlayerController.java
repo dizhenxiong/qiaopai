@@ -71,9 +71,11 @@ public class PlayerController {
      */
 
     @RequestMapping(value = "/memory/create")
-    public String create(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
+    public String create(HttpServletRequest request, HttpServletResponse response, String userId,ModelMap model) throws Exception {
         model.addAttribute("bdis","disable");
         model.addAttribute("iurl","/memory/uploadFile");
+        model.addAttribute("userid",userId);
+        model.addAttribute("num",1);
         return "file/create";
 
     }
@@ -82,11 +84,14 @@ public class PlayerController {
      * 查看某个预案的详情
      */
     @RequestMapping(value = "/memory/detail")
-    public String detail(HttpServletRequest request, HttpServletResponse response, Long id, ModelMap model) throws Exception {
+    public String detail(HttpServletRequest request, HttpServletResponse response, String userId,Long id, ModelMap model) throws Exception {
         Material material = masterialService.getEntity(id);
         model.put("material", material);
         model.addAttribute("bdis","readonly");
         model.addAttribute("adis","readonly");
+        model.addAttribute("userid",userId);
+        model.addAttribute("num",2);
+
         return "file/create";
     }
 
@@ -95,11 +100,13 @@ public class PlayerController {
      * 准备审核某个预案
      */
     @RequestMapping(value = "/memory/checkdetail")
-    public String checkdetail(HttpServletRequest request, HttpServletResponse response, Long id, ModelMap model) throws Exception {
+    public String checkdetail(HttpServletRequest request, HttpServletResponse response, String userId,Long id, ModelMap model) throws Exception {
         Material material = masterialService.getEntity(id);
         model.put("material", material);
         model.addAttribute("adis","disable");
         model.addAttribute("iurl","/memory/check");
+        model.addAttribute("userid",userId);
+        model.addAttribute("num",3);
         return "file/create";
     }
 
