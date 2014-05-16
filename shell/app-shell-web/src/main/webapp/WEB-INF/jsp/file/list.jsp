@@ -94,7 +94,7 @@
                                         <a type="button" class="btn btn-default btn-xs"
                                            href="/memory/detail?id=${material.id}">查看</a>
                                     </c:if>
-                                    <c:if test="${id=='1'}">
+                                    <c:if test="${id=='2'}">
                                         <a type="button" class="btn btn-default btn-xs"
                                            href="/memory/checkdetail?id=${material.id}">审核</a>
                                     </c:if>

@@ -114,11 +114,11 @@ public class PlayerController {
 
         if (DalConstants.ID_CUSTOMER.equalsIgnoreCase(id)) {
             List<Material> materialList = masterialService.getAllMaterialList();
-            model.addAttribute("userId", id);
+            model.addAttribute("id", id);
             model.addAttribute("materials", materialList);
         } else if (DalConstants.ID_SPCE.equalsIgnoreCase(id)) {
             List<Material> materialList = masterialService.getNewMaterialList();
-            model.addAttribute("userId", id);
+            model.addAttribute("id", id);
             model.addAttribute("materials", materialList);
         }
         return "file/list";
