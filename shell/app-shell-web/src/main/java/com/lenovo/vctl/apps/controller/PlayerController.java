@@ -1,5 +1,6 @@
 package com.lenovo.vctl.apps.controller;
 
+import antlr.StringUtils;
 import com.lenovo.vctl.apps.constants.DalConstants;
 import com.lenovo.vctl.apps.model.Material;
 import com.lenovo.vctl.apps.service.MasterialService;
@@ -111,10 +112,12 @@ public class PlayerController {
     }
 
     @RequestMapping(value = "/memory/check")
-    public String check(HttpServletRequest request, HttpServletResponse response, Long id, String comment,int status,ModelMap model) throws Exception {
+    public String check(HttpServletRequest request, HttpServletResponse response, Long id, String comment,String status,ModelMap model) throws Exception {
         Material material = masterialService.getEntity(id);
         material.setcCommnet(comment);
-        material.setStatus(status);
+        if(null != status && status.length()>1){
+            material.setStatus(Integer.parseInt(status));
+        }
         masterialService.updateEntity(material);
         return "redirect:/memory/list?id=" + DalConstants.ID_SPCE;
     }
