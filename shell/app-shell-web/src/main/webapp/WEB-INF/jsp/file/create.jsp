@@ -176,7 +176,7 @@
             pickTime : false
         });
     });    
-    )
+    
 </script>
 </body>
 </body>
