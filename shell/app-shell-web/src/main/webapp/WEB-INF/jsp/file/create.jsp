@@ -144,6 +144,7 @@
             </div>
 
             <input type="hidden" name="status" value="3"/>
+            <input type="hidden" name="id" value="${material.id}"/>
 
             <div class="row">
                 <div class="col-md-12">
