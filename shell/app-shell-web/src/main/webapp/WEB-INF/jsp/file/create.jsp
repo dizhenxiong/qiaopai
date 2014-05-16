@@ -143,7 +143,7 @@
                 </div>
             </div>
 
-            <input type="hidden" name="status" value="1"/>
+            <input type="hidden" name="status" value="3"/>
 
             <div class="row">
                 <div class="col-md-12">
@@ -170,22 +170,7 @@
         $('.datetimepicker').datetimepicker({
             pickTime : false
         });
-    });
-
- /*    $("#disagree").on('click', function() {
-        $("#status").value(2);
-        e.submit();
-
-    })
-
-    $("#agree").on('click', function() {
-        $("#status").value(3);
-        e.submit();
-
-
-    } */
-    
-    
+    });    
     )
 </script>
 </body>
