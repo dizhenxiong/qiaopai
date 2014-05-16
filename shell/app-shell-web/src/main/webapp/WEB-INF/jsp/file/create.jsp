@@ -143,10 +143,7 @@
                 </div>
             </div>
 
-            <input type="hidden" name="status" value="1"/>
-            <c:if test="${material !=null}">
-                <input type="hidden" name="id" value="${material.id}"/>
-            </c:if>
+            <input type="hidden" name="status" value="3"/>
 
             <div class="row">
                 <div class="col-md-12">
@@ -173,16 +170,8 @@
         $('.datetimepicker').datetimepicker({
             pickTime : false
         });
-    });
-
-    $("#disagree").on('click', function() {
-        $("#status").value(2);
-    })
-
-    $("#agree").on('click', function() {
-        $("#status").value(3);
-
-    })
+    });    
+    )
 </script>
 </body>
 </body>

@@ -91,7 +91,7 @@
 
 								<td>
                                     <c:if test="${id=='1'}">
-                                        <a type="button" class="btn btn-default btn-xs"
+                                        <a type="button" class="btn btn-default btn-xs btn-primary"
                                            href="/memory/detail?id=${material.id}&userId=${id}">查看</a>
                                     </c:if>
                                     <c:if test="${id=='2'}">
