@@ -134,7 +134,7 @@ public class PlayerController {
             model.addAttribute("id", id);
             model.addAttribute("materials", materialList);
         } else if (DalConstants.ID_SPCE.equalsIgnoreCase(id)) {
-            List<Material> materialList = masterialService.getNewMaterialList();
+            List<Material> materialList = masterialService.getAllMaterialList();
             model.addAttribute("id", id);
             model.addAttribute("materials", materialList);
         }
