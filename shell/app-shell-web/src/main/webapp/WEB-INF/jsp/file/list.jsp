@@ -96,10 +96,9 @@
                                     </c:if>
                                     <c:if test="${id=='2'}">
                                         <a type="button" class="btn btn-default btn-xs"
-                                           href="/memory/checkdetail?id=${material.id}">审核</a>
+                                           href="/memory/checkdetail?id=${material.id}" >
+                                             审核</a>
                                     </c:if>
-
-
 
                                 </td>
 							</tr>
