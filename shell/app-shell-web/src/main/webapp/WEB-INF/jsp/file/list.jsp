@@ -96,7 +96,11 @@
                                     </c:if>
                                     <c:if test="${id=='2'}">
                                         <a type="button" class="btn btn-default btn-xs"
-                                           href="/memory/checkdetail?id=${material.id}&userId=${id}" >
+                                           href="/memory/checkdetail?id=${material.id}&userId=${id}"
+                                                <c:if test="${material.status >1}">
+                                                    readonly
+                                                </c:if>
+                                                >
                                              审核</a>
                                     </c:if>
 
