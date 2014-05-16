@@ -1,6 +1,5 @@
 .settings
 .idea
-/target
 .project
 .classpath
 /db/*
@@ -8,3 +7,5 @@
 /db
 /jdbm
 Thumbs.db
+target
+bin
