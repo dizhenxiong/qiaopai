@@ -61,7 +61,7 @@
         <c:if test="${id=='1'}">
             <div class="row">
                 <a type="button" class="btn btn-default btn-success"
-                   href="/memory/create">创建</a>
+                   href="/memory/create?userId=${id}">创建</a>
             </div>
         </c:if>
 
@@ -92,11 +92,11 @@
 								<td>
                                     <c:if test="${id=='1'}">
                                         <a type="button" class="btn btn-default btn-xs"
-                                           href="/memory/detail?id=${material.id}">查看</a>
+                                           href="/memory/detail?id=${material.id}&userId=${id}">查看</a>
                                     </c:if>
                                     <c:if test="${id=='2'}">
                                         <a type="button" class="btn btn-default btn-xs"
-                                           href="/memory/checkdetail?id=${material.id}" >
+                                           href="/memory/checkdetail?id=${material.id}&userId=${id}" >
                                              审核</a>
                                     </c:if>
 
