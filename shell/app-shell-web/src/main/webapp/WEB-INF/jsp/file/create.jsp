@@ -90,6 +90,7 @@
                     <label for="">合资公司*</label>
                     <select name="sCompany" class="form-control">
                         <option value="Intel">英特尔</option>
+                        <option value="Mico">微软</option>
                     </select>
                 </div>
                 <div class="form-group col-md-6">
@@ -103,7 +104,8 @@
             <div class="row">
 
                 <div class="form-group col-md-6">
-                    <label for="">通讯类型*</label> <select class="form-control">
+                    <label for="">通讯类型*</label>
+                    <select class="form-control">
                     <option value="">Select Communication Type</option>
                 </select>
                 </div>
@@ -117,9 +119,9 @@
                 <div class="form-group col-md-6">
                     <label for="">壳牌地区*</label>
                     <select class="form-control" name="area">
-                        <option value="">Select Area of Shell Business or
-                            Function
-                        </option>
+                        <option value="">Select Area of Shell Business or Function</option>
+                        <option value="北京">北京</option>
+                        <option value="香港">香港</option>
                     </select>
                 </div>
                 <div class="form-group col-md-6">
@@ -130,7 +132,7 @@
             <div class="row">
                 <div class="form-group col-md-12">
                     <lable>附言</lable>
-                    <textarea class="form-control" rows="3"></textarea>
+                    <textarea class="form-control" rows="3" disabled></textarea>
 
                 </div>
             </div>
