@@ -117,9 +117,8 @@ public class PlayerController {
         log.info("/memory/checkdetaila : id "+mid+ "status : "+status);
         Material material = masterialService.getEntity(mid);
         material.setcCommnet(comment);
-        if(null != status && status.length()>0){
-            material.setStatus(Integer.parseInt(status.trim()));
-        }
+        material.setStatus(Integer.parseInt(status.trim()));
+
         masterialService.updateEntity(material);
         return "redirect:/memory/list?id=" + DalConstants.ID_SPCE;
     }
