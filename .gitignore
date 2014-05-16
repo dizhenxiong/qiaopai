@@ -1,8 +1,8 @@
-/.settings
-/.idea
+.settings
+.idea
 /target
-/.project
-/.classpath
+.project
+.classpath
 /db/*
 /record
 /db
