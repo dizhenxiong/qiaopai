@@ -144,6 +144,9 @@
             </div>
 
             <input type="hidden" name="status" value="1"/>
+            <c:if test="${material !=null}">
+                <input type="hidden" name="id" value="${material.id}"/>
+            </c:if>
 
             <div class="row">
                 <div class="col-md-12">
