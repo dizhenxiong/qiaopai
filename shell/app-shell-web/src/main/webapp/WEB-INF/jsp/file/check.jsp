@@ -156,8 +156,8 @@
 									type="hidden" name="status" value="3" />
 								<div class="row">
 									<div class="col-md-12">
-										<button type="submit" class="btn btn-success">拒绝</button>
-										<button type="submit" class="btn btn-success">通过</button>
+										<button type="submit" class="btn btn-success" id="disagree">拒绝</button>
+										<button type="submit" class="btn btn-success" id="agree">通过</button>
 										<%--<button type="button" class="btn btn-primary">审核</button>--%>
 									</div>
 								</div>
