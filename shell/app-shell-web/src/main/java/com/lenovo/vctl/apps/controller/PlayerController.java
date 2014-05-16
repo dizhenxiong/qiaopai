@@ -72,6 +72,7 @@ public class PlayerController {
 
     @RequestMapping(value = "/memory/create")
     public String create(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
+        model.addAttribute("disable","");
         return "file/create";
 
     }

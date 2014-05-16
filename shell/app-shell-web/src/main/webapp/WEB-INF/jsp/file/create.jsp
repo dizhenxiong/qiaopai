@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">标题*</label>
-                    <input name="title"  class="form-control" id="" placeholder="" >
+                    <input name="title"  class="form-control" id="" placeholder=""  value="${material.title}">
                 </div>
 
                 <div class="form-group col-md-6">
