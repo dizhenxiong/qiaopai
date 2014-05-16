@@ -43,7 +43,11 @@
 
 <div class="container">
     <div class="row marketing">
-        <form role="form" action="${iurl}" method="post"   enctype="multipart/form-data" >
+        <form role="form" action="${iurl}" method="post"
+              <c:if test="${id==1}">
+                  enctype="multipart/form-data"
+              </c:if>
+              >
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">标题*</label>
@@ -144,7 +148,7 @@
             </div>
 
             <input type="hidden" name="status" value="3"/>
-            <input type="hidden" name="id" value="${material.id}"/>
+            <input type="hidden" name="mid" value="${material.id}"/>
 
             <div class="row">
                 <div class="col-md-12">

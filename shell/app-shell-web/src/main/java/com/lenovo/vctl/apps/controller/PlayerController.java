@@ -102,6 +102,7 @@ public class PlayerController {
      */
     @RequestMapping(value = "/memory/checkdetail")
     public String checkdetail(HttpServletRequest request, HttpServletResponse response, String userId,Long id, ModelMap model) throws Exception {
+
         Material material = masterialService.getEntity(id);
         model.put("material", material);
         model.addAttribute("adis","disable");
@@ -112,8 +113,9 @@ public class PlayerController {
     }
 
     @RequestMapping(value = "/memory/check")
-    public String check(HttpServletRequest request, HttpServletResponse response, Long id, String comment,String status,ModelMap model) throws Exception {
-        Material material = masterialService.getEntity(id);
+    public String check(HttpServletRequest request, HttpServletResponse response, Long mid, String comment,String status,ModelMap model) throws Exception {
+        log.info("/memory/checkdetaila : id "+mid);
+        Material material = masterialService.getEntity(mid);
         material.setcCommnet(comment);
         if(null != status && status.length()>1){
             material.setStatus(Integer.parseInt(status));
