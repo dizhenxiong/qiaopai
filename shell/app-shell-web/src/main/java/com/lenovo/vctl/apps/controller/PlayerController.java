@@ -72,7 +72,7 @@ public class PlayerController {
 
     @RequestMapping(value = "/memory/create")
     public String create(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
-        model.addAttribute("disable","");
+        model.addAttribute("bdis","disable");
         return "file/create";
 
     }
@@ -84,7 +84,9 @@ public class PlayerController {
     public String detail(HttpServletRequest request, HttpServletResponse response, Long id, ModelMap model) throws Exception {
         Material material = masterialService.getEntity(id);
         model.put("material", material);
-        return "file/detail";
+        model.addAttribute("bdis","disable");
+        model.addAttribute("adis","disable");
+        return "file/create";
     }
 
 
@@ -95,7 +97,8 @@ public class PlayerController {
     public String checkdetail(HttpServletRequest request, HttpServletResponse response, Long id, ModelMap model) throws Exception {
         Material material = masterialService.getEntity(id);
         model.put("material", material);
-        return "file/check";
+        model.addAttribute("adis","disable");
+        return "file/create";
     }
 
     @RequestMapping(value = "/memory/check")
