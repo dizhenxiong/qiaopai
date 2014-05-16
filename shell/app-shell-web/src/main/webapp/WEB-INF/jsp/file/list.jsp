@@ -56,17 +56,14 @@
 		</div>
 	</div>
 
-
-
-
-
 	<div class="container">
 
-
-		<div class="row">
-			<a type="button" class="btn btn-default btn-success"
-				href="/memory/create">创建</a>
-		</div>
+        <c:if test="${id=='1'}">
+            <div class="row">
+                <a type="button" class="btn btn-default btn-success"
+                   href="/memory/create">创建</a>
+            </div>
+        </c:if>
 
 		<div class="row marketing">
 			<div class="col-md-12">

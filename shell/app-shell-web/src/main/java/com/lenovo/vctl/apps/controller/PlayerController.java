@@ -99,6 +99,10 @@ public class PlayerController {
 
     @RequestMapping(value = "/memory/check")
     public String check(HttpServletRequest request, HttpServletResponse response, Long id, String comment,int status,ModelMap model) throws Exception {
+        Material material = masterialService.getEntity(id);
+        material.setcCommnet(comment);
+        material.setStatus(status);
+        masterialService.updateEntity(material);
         return "redirect:/memory/list?id=" + DalConstants.ID_SPCE;
     }
 
