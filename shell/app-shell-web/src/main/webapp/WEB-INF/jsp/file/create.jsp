@@ -157,7 +157,7 @@
                         <button type="submit" class="btn btn-success">提交</button>
                     </c:if>
                     <c:if test="${num == 3}">
-                        <button type="submit" class="btn btn-success" id="disagree">拒绝</button>
+                        <%--<button type="submit" class="btn btn-success" id="disagree">拒绝</button>--%>
                         <button type="submit" class="btn btn-success" id="agree">通过</button>
                     </c:if>
                 </div>
