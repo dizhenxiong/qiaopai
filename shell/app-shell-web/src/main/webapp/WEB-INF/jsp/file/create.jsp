@@ -43,7 +43,7 @@
 
 <div class="container">
     <div class="row marketing">
-        <form role="form" action="/memory/uploadFile" method="post"   enctype="multipart/form-data" >
+        <form role="form" action="${iurl}" method="post"   enctype="multipart/form-data" >
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">标题*</label>

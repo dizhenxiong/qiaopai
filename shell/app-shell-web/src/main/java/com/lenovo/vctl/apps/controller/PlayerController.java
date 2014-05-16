@@ -73,6 +73,7 @@ public class PlayerController {
     @RequestMapping(value = "/memory/create")
     public String create(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
         model.addAttribute("bdis","disable");
+        model.addAttribute("iurl","/memory/uploadFile");
         return "file/create";
 
     }
@@ -98,6 +99,7 @@ public class PlayerController {
         Material material = masterialService.getEntity(id);
         model.put("material", material);
         model.addAttribute("adis","disable");
+        model.addAttribute("iurl","/memory/check");
         return "file/create";
     }
 
