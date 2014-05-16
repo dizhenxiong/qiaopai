@@ -137,6 +137,11 @@
                 <div class="form-group col-md-6">
                     <label for="exampleInputFile">上传文件</label>
                     <input type="file" name="file" id="exampleInputFile" ${adis}/>
+                    <c:if test="${num>1}">
+                        <label for=""> <a href="http://download.shell.ptteng.com/${material.url}" target="_blank">附件</a></label>
+
+                    </c:if>
+
                 </div>
             </div>
             <div class="row">
