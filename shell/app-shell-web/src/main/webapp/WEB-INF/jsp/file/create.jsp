@@ -1,4 +1,9 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8" %>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page isELIgnored="false"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -38,32 +43,33 @@
 
 <div class="container">
     <div class="row marketing">
-        <form role="form" action="/memory/uploadFile" method="post"   enctype="multipart/form-data" >
+        <form role="form" action="${iurl}" method="post"   enctype="multipart/form-data" >
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">标题*</label>
-                    <input name="title"  class="form-control" id="" placeholder=""  value="${material.title}">
+                    <input name="title"  class="form-control" id="" placeholder=""  value="${material.title}"  ${adis}>
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="">材料长度*</label> <select class="form-control">
-                    <option value="">Select</option>
-                </select>
+                    <label for="">材料长度*</label>
+                    <select class="form-control" ${adis}>
+                       <option value="1米">1米</option>
+                    </select>
                 </div>
             </div>
             <div class="row">
 
                 <div class="form-group col-md-6">
-                    <label for="">备注*</label> <select class="form-control">
-                    <option value="">Select Material</option>
-                </select>
+                    <label for="">备注*</label>
+                    <select class="form-control" ${adis}>
+                      <option value="">Select Material</option>
+                    </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="">计划时间</label>
 
-                    <div class='input-group date datetimepicker' id=''
-                         data-date-format="YYYY/MM/DD">
-                        <input name="firstTime" type='text' class="form-control"/>
+                    <div class='input-group date datetimepicker' id=''   data-date-format="YYYY/MM/DD">
+                        <input name="firstTime" type='text' class="form-control" value=" ${material.firstTime}" ${adis}/>
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -73,12 +79,12 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">邮箱抄送地址</label>
-                    <input type="email" name="sEmailcc" class="form-control" id="" placeholder="">
+                    <input type="email" name="sEmailcc" class="form-control" id="" placeholder=""  value="${material.sEmailcc}" ${adis}>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="">截止日期*</label> <label>
                     <div class='input-group date datetimepicker' id='' data-date-format="YYYY/MM/DD">
-                        <input name="deadline" type='text' class="form-control"/>
+                        <input name="deadline" type='text' class="form-control" value="${material.deadline}" ${adis}/>
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -88,7 +94,7 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">合资公司*</label>
-                    <select name="sCompany" class="form-control">
+                    <select name="sCompany" class="form-control" ${adis}>
                         <option value="Intel">英特尔</option>
                         <option value="Mico">微软</option>
                     </select>
@@ -105,7 +111,7 @@
 
                 <div class="form-group col-md-6">
                     <label for="">通讯类型*</label>
-                    <select class="form-control">
+                    <select class="form-control" ${adis}>
                     <option value="">Select Communication Type</option>
                 </select>
                 </div>
@@ -118,7 +124,7 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">壳牌地区*</label>
-                    <select class="form-control" name="area">
+                    <select class="form-control" name="area" ${adis}>
                         <option value="">Select Area of Shell Business or Function</option>
                         <option value="北京">北京</option>
                         <option value="香港">香港</option>
@@ -126,20 +132,29 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="exampleInputFile">上传文件</label>
-                    <input type="file" name="file" id="exampleInputFile"/>
+                    <input type="file" name="file" id="exampleInputFile" ${adis}/>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12">
-                    <lable>附言</lable>
-                    <textarea class="form-control" rows="3" disabled></textarea>
+                    <lable>审核意见</lable>
+                    <textarea class="form-control" rows="3"  ${bdis}></textarea>
 
                 </div>
             </div>
 
+            <input type="hidden" name="status" value="1"/>
+
             <div class="row">
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-success">提交</button>
+                    <a href="/memory/list?id=${userid}">返回</a>
+                    <c:if test="${num == 1}">
+                        <button type="submit" class="btn btn-success">提交</button>
+                    </c:if>
+                    <c:if test="${num == 3}">
+                        <button type="submit" class="btn btn-success" id="disagree">拒绝</button>
+                        <button type="submit" class="btn btn-success" id="agree">通过</button>
+                    </c:if>
                 </div>
             </div>
         </form>
@@ -149,12 +164,27 @@
     </div>
 
 </div>
+
 <script type="text/javascript">
-    $(function () {
+    $(function() {
         $('.datetimepicker').datetimepicker({
-            pickTime: false
+            pickTime : false
         });
     });
+
+    $("#disagree").on('click', function() {
+        $("#status").value(2);
+        e.submit();
+
+    })
+
+    $("#agree").on('click', function() {
+        $("#status").value(3);
+        e.submit();
+
+
+    })
 </script>
+</body>
 </body>
 </html>

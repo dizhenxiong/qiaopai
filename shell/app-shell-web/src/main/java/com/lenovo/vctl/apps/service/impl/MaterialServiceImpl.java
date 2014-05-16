@@ -29,7 +29,7 @@ public class MaterialServiceImpl extends DalBaseServiceImpl<Material> implements
         if (CollectionUtils.isEmpty(idLs))
             return new ArrayList<Material>();
 
-        return getObjectList(userId, idLs);
+        return fullMaterialList(getObjectList(userId, idLs));
     }
 
     @Override
@@ -38,7 +38,7 @@ public class MaterialServiceImpl extends DalBaseServiceImpl<Material> implements
         if (CollectionUtils.isEmpty(idLs))
             return new ArrayList<Material>();
 
-        return getObjectList(idLs);
+        return fullMaterialList(getObjectList(idLs));
     }
 
     @Override
@@ -47,7 +47,8 @@ public class MaterialServiceImpl extends DalBaseServiceImpl<Material> implements
         if (CollectionUtils.isEmpty(idLs))
             return new ArrayList<Material>();
 
-        return getObjectList(idLs);
+
+        return fullMaterialList(getObjectList(idLs));
 
     }
 

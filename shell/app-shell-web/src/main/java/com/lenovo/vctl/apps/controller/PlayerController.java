@@ -1,5 +1,6 @@
 package com.lenovo.vctl.apps.controller;
 
+import antlr.StringUtils;
 import com.lenovo.vctl.apps.constants.DalConstants;
 import com.lenovo.vctl.apps.model.Material;
 import com.lenovo.vctl.apps.service.MasterialService;
@@ -71,8 +72,11 @@ public class PlayerController {
      */
 
     @RequestMapping(value = "/memory/create")
-    public String create(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
-        model.addAttribute("disable","");
+    public String create(HttpServletRequest request, HttpServletResponse response, String userId,ModelMap model) throws Exception {
+        model.addAttribute("bdis","disable");
+        model.addAttribute("iurl","/memory/uploadFile");
+        model.addAttribute("userid",userId);
+        model.addAttribute("num",1);
         return "file/create";
 
     }
@@ -81,10 +85,15 @@ public class PlayerController {
      * 查看某个预案的详情
      */
     @RequestMapping(value = "/memory/detail")
-    public String detail(HttpServletRequest request, HttpServletResponse response, Long id, ModelMap model) throws Exception {
+    public String detail(HttpServletRequest request, HttpServletResponse response, String userId,Long id, ModelMap model) throws Exception {
         Material material = masterialService.getEntity(id);
         model.put("material", material);
-        return "file/detail";
+        model.addAttribute("bdis","readonly");
+        model.addAttribute("adis","readonly");
+        model.addAttribute("userid",userId);
+        model.addAttribute("num",2);
+
+        return "file/create";
     }
 
 
@@ -92,17 +101,23 @@ public class PlayerController {
      * 准备审核某个预案
      */
     @RequestMapping(value = "/memory/checkdetail")
-    public String checkdetail(HttpServletRequest request, HttpServletResponse response, Long id, ModelMap model) throws Exception {
+    public String checkdetail(HttpServletRequest request, HttpServletResponse response, String userId,Long id, ModelMap model) throws Exception {
         Material material = masterialService.getEntity(id);
         model.put("material", material);
-        return "file/check";
+        model.addAttribute("adis","disable");
+        model.addAttribute("iurl","/memory/check");
+        model.addAttribute("userid",userId);
+        model.addAttribute("num",3);
+        return "file/create";
     }
 
     @RequestMapping(value = "/memory/check")
-    public String check(HttpServletRequest request, HttpServletResponse response, Long id, String comment,int status,ModelMap model) throws Exception {
+    public String check(HttpServletRequest request, HttpServletResponse response, Long id, String comment,String status,ModelMap model) throws Exception {
         Material material = masterialService.getEntity(id);
         material.setcCommnet(comment);
-        material.setStatus(status);
+        if(null != status && status.length()>1){
+            material.setStatus(Integer.parseInt(status));
+        }
         masterialService.updateEntity(material);
         return "redirect:/memory/list?id=" + DalConstants.ID_SPCE;
     }
