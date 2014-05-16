@@ -38,7 +38,7 @@
 
 <div class="container">
     <div class="row marketing">
-        <form role="form" action="/memory/uploadFile" method="post"   enctype="multipart/form-data" >
+        <form role="form" action="/memory/check" method="post"   enctype="multipart/form-data" >
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">标题*</label>
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="">材料长度*</label> <select class="form-control">
+                    <label for="">材料长度*</label> <select class="form-control" disabled>
                     <option value="">Select</option>
                 </select>
                 </div>
@@ -54,16 +54,17 @@
             <div class="row">
 
                 <div class="form-group col-md-6">
-                    <label for="">备注*</label> <select class="form-control">
-                    <option value="">Select Material</option>
-                </select>
+                    <label for="">备注*</label>
+                    <select class="form-control" disabled>
+                       <option value="">Select Material</option>
+                     </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="">计划时间</label>
 
                     <div class='input-group date datetimepicker' id=''
                          data-date-format="YYYY/MM/DD">
-                        <input name="firstTime" type='text' class="form-control"/>
+                        <input name="firstTime" type='text' class="form-control" disabled/>
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -73,12 +74,12 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">邮箱抄送地址</label>
-                    <input type="email" name="sEmailcc" class="form-control" id="" placeholder="">
+                    <input type="email" name="sEmailcc" class="form-control" id="" placeholder="" disabled>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="">截止日期*</label> <label>
                     <div class='input-group date datetimepicker' id='' data-date-format="YYYY/MM/DD">
-                        <input name="deadline" type='text' class="form-control"/>
+                        <input name="deadline" type='text' class="form-control" disabled/>
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -88,7 +89,7 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">合资公司*</label>
-                    <select name="sCompany" class="form-control">
+                    <select name="sCompany" class="form-control" disabled>
                         <option value="Intel">英特尔</option>
                     </select>
                 </div>
@@ -103,20 +104,21 @@
             <div class="row">
 
                 <div class="form-group col-md-6">
-                    <label for="">通讯类型*</label> <select class="form-control">
+                    <label for="">通讯类型*</label>
+                    <select class="form-control" disabled>
                     <option value="">Select Communication Type</option>
                 </select>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="">MediaHub Reference</label> <input type="email"
-                                                                    class="form-control" id="" placeholder="">
+                    <label for="">MediaHub Reference</label>
+                    <input type="email"   class="form-control" id="" placeholder="" disabled>
                 </div>
 
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="">壳牌地区*</label>
-                    <select class="form-control" name="area">
+                    <select class="form-control" name="area" disabled>
                         <option value="">Select Area of Shell Business or
                             Function
                         </option>
@@ -124,20 +126,21 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="exampleInputFile">上传文件</label>
-                    <input type="file" name="file" id="exampleInputFile"/>
+                    <input type="file" name="file" id="exampleInputFile" disabled/>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12">
-                    <lable>附言</lable>
-                    <textarea class="form-control" rows="3"></textarea>
+                    <lable>审核意见</lable>
+                    <textarea name="comment" class="form-control" rows="3"></textarea>
 
                 </div>
             </div>
-
+            <input type="hidden" name="id" value="${material.id}"/>
             <div class="row">
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-success">提交</button>
+                    <button type="submit" class="btn btn-success">拒绝</button>
+                    <button type="submit" class="btn btn-success">通过</button>
                     <%--<button type="button" class="btn btn-primary">审核</button>--%>
                 </div>
             </div>

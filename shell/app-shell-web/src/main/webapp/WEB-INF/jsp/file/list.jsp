@@ -76,7 +76,7 @@
 							<th>公司</th>
 							<th>上传时间</th>
 							<th>状态</th>
-							<th>查看</th>
+							<th>处理</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -88,8 +88,20 @@
 								<td>${material.sCompany}</td>
 								<td>${material.firstTime}</td>
 								<td>${material.status}</td>
-								<td><a type="button" class="btn btn-default btn-xs"
-									href="/memory/detail?id=${material.id}">查看</a></td>
+
+								<td>
+                                    <c:if test="${id=='1'}">
+                                        <a type="button" class="btn btn-default btn-xs"
+                                           href="/memory/detail?id=${material.id}">查看</a>
+                                    </c:if>
+                                    <c:if test="${id=='1'}">
+                                        <a type="button" class="btn btn-default btn-xs"
+                                           href="/memory/checkdetail?id=${material.id}">审核</a>
+                                    </c:if>
+
+
+
+                                </td>
 							</tr>
 
 						</c:forEach>

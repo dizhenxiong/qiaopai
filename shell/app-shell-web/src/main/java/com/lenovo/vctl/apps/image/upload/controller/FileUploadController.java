@@ -179,6 +179,7 @@ public class FileUploadController extends BaseController {
         material.setsEmail("customer@shell.com");
         material.setsCompany(reqMaps.get("sCompany"));
         material.setUrl(f.getName());
+        material.setStatus(DalConstants.STATSS_NEW);
         return material;
     }
 
